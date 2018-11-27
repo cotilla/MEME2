@@ -1,55 +1,53 @@
-var univers;
-var duck;
-var I = "it may seem like";
-var T = "it doesn't hurt";
-var B = "but";
-var R = "it really does";
+/*
+    final project presentation slides
+*/
+var slide = 0;
+
+var frog;
 
 function preload() {
-   univers = loadImage("univers.jpg");
-   duck = loadImage("killer_duck.jpg");
+    frog = loadImage("frog.jpg");
+    
 }
 
-
 function setup() {
-	createCanvas(1048, 1042);
+    createCanvas(800, 500);
+    textSize(60);
+    textFont('monospace');
+    textAlign(CENTER, CENTER);
+    rectMode(CENTER);
 }
 
 function draw() {
-	background(0);
+    background(220);
     
-     	
-	/* draw quandrant lines */
-	strokeWeight(1);
-	stroke("white");
-	line(width/2, 0, width/2, height);
-	line(0, height/2, width, height/2);
-
-	fill("white");
-
-	
-	if (mouseX > width/2 && mouseY > height/2) {
-		 image(duck, width/2, height/2, width, height);
-    } else if (mouseX < width/2 && mouseY > height/2) {
-		image(duck, 0, height/2, width/2, height);
-	} else if (mouseX > width/2 && mouseY < height/2) {
-		image(duck,width/2, 0, width, height/2);
-	} else {
-		image(duck, 0, 0, width/2, height/2);
-	}
-    fill("black");
-    textSize(20);
-    strokeWeight(0);
-	text(I, 50, 50);
-    text(T, 600, 50);
-	text(B, 100, 600);
-	text(R, 600, 600);
+    if (slide == 0) {
+        text("Final Project Idea", width/2, height/2);
+        text("making a frog jump",400, 350);
+    } else if (slide == 1) {
+        textSize(30);
+        text("Force resisiting sensor", 200, 100);
+        
+        // fsr graphic
+        rect(width/2, 300, 50, 300);
+        ellipse(width/2, 200, 150);
+    } else if (slide == 2) {
+        text("theme: animals", 200, 20);
+        image(frog, 10, 50);
+    }
 }
-    
-	
-	
-	
-	
-	
-	
-	
+
+function mousePressed() {
+    if (mouseX > width/2) {
+        if (slide < 3) {
+            slide++;
+        }
+    } else {
+        if (slide > 0) {
+            slide--;
+        }
+    }
+}
+   
+     
+
