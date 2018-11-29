@@ -22,8 +22,7 @@ function draw() {
     background(220);
     
     if (slide == 0) {
-        text("Final Project Idea", width/2, height/2);
-        text("making a frog jump",400, 350);
+        text("making a frog jump", width/2, height/2);
     } else if (slide == 1) {
         textSize(30);
         text("Force resisiting sensor", 200, 100);
